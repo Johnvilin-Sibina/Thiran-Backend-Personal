@@ -1,0 +1,22 @@
+import { Model } from 'sequelize';
+
+export default (sequelize, DataTypes) => {
+  class TechStack extends Model {
+    static associate(models) {
+      TechStack.hasMany(models.Project, {foreignKey: 'techStackId'})
+    }
+  }
+  TechStack.init({
+    name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
+  },
+    description: DataTypes.TEXT
+  }, {
+    sequelize,
+    modelName: 'TechStack',
+    tableName: 'TechStacks'
+  });
+  return TechStack;
+};
