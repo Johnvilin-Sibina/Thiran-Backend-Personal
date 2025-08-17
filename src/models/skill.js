@@ -3,16 +3,22 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class Skill extends Model {
     static associate(models) {
-      Skill.belongsTo(models.Student, {foreignKey: 'studentId'})
+     Skill.belongsToMany(models.Student, {
+        through: models.StudentSkill
+      });
     }
   }
   Skill.init({
-    name: DataTypes.STRING,
-    studentId: DataTypes.BIGINT
+    name: {
+      type:DataTypes.STRING,
+      unique:true
+    }
   }, {
     sequelize,
     modelName: 'Skill',
-    tableName: 'Skills'
+    tableName: 'Skills',
+    paranoid: true,
+    timestamps: true
   });
   return Skill;
 };

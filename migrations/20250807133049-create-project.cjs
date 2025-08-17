@@ -10,13 +10,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       description: {
         type: Sequelize.TEXT
       },
       techStackId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         references:{
           model:'TechStacks',
           key:'id'
@@ -25,7 +26,7 @@ module.exports = {
         onDelete:'RESTRICT'
       },
       studentId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         references:{
           model:'Students',
           key:'id'
@@ -53,7 +54,7 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {

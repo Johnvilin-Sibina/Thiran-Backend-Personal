@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath,pathToFileURL } from 'url';
 import process from 'process';
 import Sequelize from 'sequelize';
 import configFile from '../config/config.cjs'
@@ -20,7 +20,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize.Sequelize(config.database, config.username, config.password, config);
 }
 
-fs
+const modelFiles = fs
   .readdirSync(__dirname)
   .filter(file => {
     return (
@@ -29,12 +29,13 @@ fs
       file.slice(-3) === '.js' &&
       file.indexOf('.test.js') === -1
     );
-  })
-  .forEach(async file => {
-    const { default: modelDefiner } = await import(path.join(__dirname, file));
-    const model = modelDefiner(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
   });
+  for (const file of modelFiles) {
+  const modelPath = pathToFileURL(path.join(__dirname, file)).href;
+  const { default: modelDefiner } = await import(modelPath);
+  const model = modelDefiner(sequelize, Sequelize.DataTypes);
+  db[model.name] = model;
+}
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {

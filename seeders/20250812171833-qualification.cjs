@@ -34,5 +34,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Qualifications', null, {});
+     await queryInterface.sequelize.query(`ALTER SEQUENCE "Qualifications_id_seq" RESTART WITH 1`);
   }
 };

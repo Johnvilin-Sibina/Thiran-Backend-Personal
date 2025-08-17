@@ -7,7 +7,7 @@ module.exports = {
       {
         firstName: 'Aarav',
         lastName: 'Sharma',
-        userName: 'aarav.sharma',
+        username: 'aarav.sharma',
         email: 'aarav.sharma@example.com',
         roleId: 3,
         createdAt: new Date(),
@@ -16,7 +16,7 @@ module.exports = {
       {
         firstName: 'Priya',
         lastName: 'Iyer',
-        userName: 'priya.iyer',
+        username: 'priya.iyer',
         email: 'priya.iyer@example.com',
         roleId: 3,
         createdAt: new Date(),
@@ -25,7 +25,7 @@ module.exports = {
       {
         firstName: 'Karan',
         lastName: 'Verma',
-        userName: 'karan.verma',
+        username: 'karan.verma',
         email: 'karan.verma@example.com',
         roleId: 3,
         createdAt: new Date(),
@@ -34,7 +34,7 @@ module.exports = {
       {
         firstName: 'Neha',
         lastName: 'Reddy',
-        userName: 'neha.reddy',
+        username: 'neha.reddy',
         email: 'neha.reddy@example.com',
         roleId: 3,
         createdAt: new Date(),
@@ -43,7 +43,7 @@ module.exports = {
       {
         firstName: 'Vikram',
         lastName: 'Menon',
-        userName: 'vikram.menon',
+        username: 'vikram.menon',
         email: 'vikram.menon@example.com',
         roleId: 3,
         createdAt: new Date(),
@@ -54,5 +54,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
      await queryInterface.bulkDelete('Mentors', null, {});
+      await queryInterface.sequelize.query(`ALTER SEQUENCE "Mentors_id_seq" RESTART WITH 1`);
   }
 };

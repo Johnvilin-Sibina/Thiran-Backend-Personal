@@ -3,8 +3,8 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class Role extends Model {
     static associate(models) {
-      Role.hasMany(models.Student, {foreignKey: 'roleId'})
-      Role.hasMany(models.Mentor, {foreignKey: 'roleId'})
+      Role.hasMany(models.Student)
+      Role.hasMany(models.Mentor)
     }
   }
   Role.init({
@@ -12,7 +12,9 @@ export default (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Role',
-    tableName: 'Roles'
+    tableName: 'Roles',
+    paranoid: true,
+    timestamps: true
   });
   return Role;
 };

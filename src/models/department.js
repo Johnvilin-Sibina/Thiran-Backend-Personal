@@ -3,7 +3,7 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class Department extends Model {
     static associate(models) {
-      Department.hasMany(models.Student, {foreignKey: 'departmentId'})
+      Department.hasMany(models.Student)
     }
   }
   Department.init({
@@ -11,7 +11,9 @@ export default (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Department',
-    tableName: 'Departments'
+    tableName: 'Departments',
+    paranoid: true,
+    timestamps: true
   });
   return Department;
 };

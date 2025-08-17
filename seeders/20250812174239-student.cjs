@@ -7,7 +7,7 @@ module.exports = {
     {
       firstName: 'Arjun',
       lastName: 'Kumar',
-      userName: 'arjun.k',
+      username: 'arjun.k',
       email: 'arjun.kumar@example.com',
       phoneNumber: '9876543210',
       description: 'Passionate about fullstack development and AI.',
@@ -23,7 +23,7 @@ module.exports = {
     {
       firstName: 'Sneha',
       lastName: 'Iyer',
-      userName: 'sneha.iyer',
+      username: 'sneha.iyer',
       email: 'sneha.iyer@example.com',
       phoneNumber: '9876512340',
       description: 'Interested in Data Science and Machine Learning.',
@@ -39,7 +39,7 @@ module.exports = {
     {
       firstName: 'Ravi',
       lastName: 'Sharma',
-      userName: 'ravi.sharma',
+      username: 'ravi.sharma',
       email: 'ravi.sharma@example.com',
       phoneNumber: '9988776655',
       description: 'Aspiring cybersecurity analyst.',
@@ -55,7 +55,7 @@ module.exports = {
     {
       firstName: 'Pooja',
       lastName: 'Menon',
-      userName: 'pooja.m',
+      username: 'pooja.m',
       email: 'pooja.menon@example.com',
       phoneNumber: '9876001122',
       description: 'Specializes in frontend development with React.',
@@ -71,7 +71,7 @@ module.exports = {
     {
       firstName: 'Aditya',
       lastName: 'Gupta',
-      userName: 'aditya.g',
+      username: 'aditya.g',
       email: 'aditya.gupta@example.com',
       phoneNumber: '9876123456',
       description: 'Focused on backend APIs and database management.',
@@ -87,7 +87,7 @@ module.exports = {
     {
       firstName: 'Deepika',
       lastName: 'Rao',
-      userName: 'deepika.rao',
+      username: 'deepika.rao',
       email: 'deepika.rao@example.com',
       phoneNumber: '9988123456',
       description: 'Machine Learning enthusiast and researcher.',
@@ -103,7 +103,7 @@ module.exports = {
     {
       firstName: 'Karthik',
       lastName: 'Iyer',
-      userName: 'karthik.iyer',
+      username: 'karthik.iyer',
       email: 'karthik.iyer@example.com',
       phoneNumber: '9876543211',
       description: 'Fullstack developer with passion for React and Node.',
@@ -119,7 +119,7 @@ module.exports = {
     {
       firstName: 'Anjali',
       lastName: 'Shah',
-      userName: 'anjali.shah',
+      username: 'anjali.shah',
       email: 'anjali.shah@example.com',
       phoneNumber: '9876543222',
       description: 'Cybersecurity analyst and ethical hacker.',
@@ -135,7 +135,7 @@ module.exports = {
     {
       firstName: 'Vikram',
       lastName: 'Singh',
-      userName: 'vikram.singh',
+      username: 'vikram.singh',
       email: 'vikram.singh@example.com',
       phoneNumber: '9876543233',
       description: 'Data scientist working on NLP projects.',
@@ -151,7 +151,7 @@ module.exports = {
     {
       firstName: 'Sonal',
       lastName: 'Patel',
-      userName: 'sonal.patel',
+      username: 'sonal.patel',
       email: 'sonal.patel@example.com',
       phoneNumber: '9876543244',
       description: 'Frontend developer with expertise in Vue.js.',
@@ -167,7 +167,7 @@ module.exports = {
     {
       firstName: 'Rohit',
       lastName: 'Desai',
-      userName: 'rohit.desai',
+      username: 'rohit.desai',
       email: 'rohit.desai@example.com',
       phoneNumber: '9876543255',
       description: 'Backend developer specializing in Node.js and Express.',
@@ -183,7 +183,7 @@ module.exports = {
     {
       firstName: 'Meera',
       lastName: 'Iyer',
-      userName: 'meera.iyer',
+      username: 'meera.iyer',
       email: 'meera.iyer@example.com',
       phoneNumber: '9876543266',
       description: 'Interested in AI and deep learning.',
@@ -199,7 +199,7 @@ module.exports = {
     {
       firstName: 'Harsh',
       lastName: 'Kumar',
-      userName: 'harsh.kumar',
+      username: 'harsh.kumar',
       email: 'harsh.kumar@example.com',
       phoneNumber: '9876543277',
       description: 'Mobile app developer with Flutter expertise.',
@@ -215,7 +215,7 @@ module.exports = {
     {
       firstName: 'Nisha',
       lastName: 'Singh',
-      userName: 'nisha.singh',
+      username: 'nisha.singh',
       email: 'nisha.singh@example.com',
       phoneNumber: '9876543288',
       description: 'Fullstack developer focusing on React and MongoDB.',
@@ -231,7 +231,7 @@ module.exports = {
     {
       firstName: 'Amit',
       lastName: 'Verma',
-      userName: 'amit.verma',
+      username: 'amit.verma',
       email: 'amit.verma@example.com',
       phoneNumber: '9876543299',
       description: 'Cloud computing and DevOps enthusiast.',
@@ -247,7 +247,7 @@ module.exports = {
     {
       firstName: 'Riya',
       lastName: 'Patel',
-      userName: 'riya.patel',
+      username: 'riya.patel',
       email: 'riya.patel@example.com',
       phoneNumber: '9876543300',
       description: 'Specializes in frontend and UI/UX design.',
@@ -263,7 +263,7 @@ module.exports = {
     {
       firstName: 'Suresh',
       lastName: 'Kumar',
-      userName: 'suresh.kumar',
+      username: 'suresh.kumar',
       email: 'suresh.kumar@example.com',
       phoneNumber: '9876543311',
       description: 'Data analyst and visualization expert.',
@@ -279,7 +279,7 @@ module.exports = {
     {
       firstName: 'Kavya',
       lastName: 'Joshi',
-      userName: 'kavya.joshi',
+      username: 'kavya.joshi',
       email: 'kavya.joshi@example.com',
       phoneNumber: '9876543322',
       description: 'AI researcher focusing on computer vision.',
@@ -295,9 +295,9 @@ module.exports = {
     {
   firstName: 'Aarav',
   lastName: 'Sharma',
-  userName: 'aaravsharma',
+  username: 'aaravsharma',
   email: 'aarav.sharma@example.com',
-  phoneNumber: '9876543210',
+  phoneNumber: '9876543212',
   description: 'Passionate about AI and Machine Learning.',
   qualificationId: 2,  
   departmentId: 9,     
@@ -311,7 +311,7 @@ module.exports = {
 {
   firstName: 'Meera',
   lastName: 'Patel',
-  userName: 'meerapatel',
+  username: 'meerapatel',
   email: 'meera.patel@example.com',
   phoneNumber: '9123456780',
   description: 'Interested in Frontend Development and UI/UX.',
@@ -329,5 +329,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
   await queryInterface.bulkDelete('Students', null, {});
+   await queryInterface.sequelize.query(`ALTER SEQUENCE "Students_id_seq" RESTART WITH 1`);
   }
 };

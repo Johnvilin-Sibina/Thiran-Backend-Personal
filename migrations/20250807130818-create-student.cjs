@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -11,37 +11,64 @@ module.exports = {
       },
       firstName: {
         type: Sequelize.STRING,
-         allowNull: false
+        allowNull: false,
       },
       lastName: {
         type: Sequelize.STRING,
-         allowNull: false
+        allowNull: false,
       },
-      userName: {
+      username: {
         type: Sequelize.STRING,
-         allowNull: false
+        allowNull: false,
+        unique: true,
       },
       email: {
         type: Sequelize.STRING,
-         allowNull: false
+        allowNull: false,
+        unique: true,
       },
       phoneNumber: {
         type: Sequelize.STRING(10),
+        unique: true,
       },
       description: {
         type: Sequelize.TEXT,
       },
       qualificationId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Qualifications",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "RESTRICT",
       },
       departmentId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Departments",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "RESTRICT",
       },
       collegeId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Colleges",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "RESTRICT",
       },
       roleId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Roles",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "RESTRICT",
       },
       currentYear: {
         type: Sequelize.ENUM(
@@ -64,11 +91,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      deletedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("Students");
-    await queryInterface.sequelize.query('DROP TYPE IF EXISTS "enum_Students_currentYear";');
-    await queryInterface.sequelize.query('DROP TYPE IF EXISTS "enum_Students_currentStatus";');
+    await queryInterface.sequelize.query(
+      'DROP TYPE IF EXISTS "enum_Students_currentYear";'
+    );
+    await queryInterface.sequelize.query(
+      'DROP TYPE IF EXISTS "enum_Students_currentStatus";'
+    );
   },
 };

@@ -59,5 +59,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Departments', null, {});
+     await queryInterface.sequelize.query(`ALTER SEQUENCE "Departments_id_seq" RESTART WITH 1`);
   }
 };

@@ -2,8 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('StudentMentorRemarks', {
-        studentId: {
+    await queryInterface.createTable('StudentSkills', {
+        skillId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model:"Skills",
+          key:"id"
+        },
+        onUpdate:"CASCADE",
+        onDelete:"RESTRICT"
+      },
+      studentId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
@@ -12,26 +22,6 @@ module.exports = {
         },
         onUpdate:"CASCADE",
         onDelete:"RESTRICT"
-      },
-      mentorId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-         references:{
-          model:"Mentors",
-          key:"id"
-        },
-        onUpdate:"CASCADE",
-        onDelete:"RESTRICT"
-      },
-      remark: {
-        type: Sequelize.TEXT
-      },
-      status:{
-        type: Sequelize.ENUM(
-          "Pending",
-          "Completed"
-        ),
-        defaultValue:"Pending"
       },
       createdAt: {
         allowNull: false,
@@ -43,16 +33,13 @@ module.exports = {
       }
     });
     // Define the composite primary key
-    await queryInterface.addConstraint('StudentMentorRemarks', {
-      fields: ['studentId', 'mentorId'],
+    await queryInterface.addConstraint('StudentSkills', {
+      fields: ['skillId', 'studentId'],
       type: 'primary key',
-      name: 'PK_StudentMentorRemarks'
+      name: 'PK_StudentSkills'
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('StudentMentorRemarks');
-    await queryInterface.sequelize.query(
-      'DROP TYPE IF EXISTS "enum_StudentMentorRemarks_status";'
-    );
+    await queryInterface.dropTable('StudentSkills');
   }
 };

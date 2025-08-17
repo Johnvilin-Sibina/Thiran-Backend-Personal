@@ -4,90 +4,88 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
    await queryInterface.bulkInsert('Skills', [
-    { name: 'JavaScript', studentId: 1, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'React', studentId: 1, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Node.js', studentId: 1, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'JavaScript', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'React', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Node.js', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Python', studentId: 2, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Django', studentId: 2, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'REST APIs', studentId: 2, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Python', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Django', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'REST APIs', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Java', studentId: 3, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Spring Boot', studentId: 3, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'MySQL', studentId: 3, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Java', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Spring Boot', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'MySQL', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'C++', studentId: 4, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Data Structures', studentId: 4, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Algorithms', studentId: 4, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'C++', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Data Structures', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Algorithms', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'HTML', studentId: 5, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'CSS', studentId: 5, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Bootstrap', studentId: 5, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'HTML', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'CSS', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Bootstrap',  createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Angular', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'TypeScript', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'RxJS', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Angular', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'TypeScript', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'RxJS', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'MongoDB', studentId: 7, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Mongoose', studentId: 7, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Express.js', studentId: 7, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'MongoDB', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Mongoose', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Express.js', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Ruby', studentId: 8, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Rails', studentId: 8, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'PostgreSQL', studentId: 8, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Ruby', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Rails', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'PostgreSQL', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'PHP', studentId: 9, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Laravel', studentId: 9, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'MySQL', studentId: 9, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'PHP', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Laravel', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Flutter', studentId: 10, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Dart', studentId: 10, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Firebase', studentId: 10, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Flutter', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Dart', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Firebase', createdAt: new Date(), updatedAt: new Date() },
 
    
-    { name: 'Kotlin', studentId: 11, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Android Development', studentId: 11, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Git', studentId: 11, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Kotlin', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Android Development', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Git', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Swift', studentId: 12, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'iOS Development', studentId: 12, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Xcode', studentId: 12, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Swift', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'iOS Development', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Xcode', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'C#', studentId: 13, createdAt: new Date(), updatedAt: new Date() },
-    { name: '.NET', studentId: 13, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'SQL Server', studentId: 13, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'C#', createdAt: new Date(), updatedAt: new Date() },
+    { name: '.NET', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'SQL Server', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Vue.js', studentId: 14, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'JavaScript', studentId: 14, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Webpack', studentId: 14, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Vue.js', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Webpack', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Docker', studentId: 15, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Kubernetes', studentId: 15, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'AWS', studentId: 15, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Docker', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Kubernetes', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'AWS', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Terraform', studentId: 16, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Ansible', studentId: 16, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Jenkins', studentId: 16, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Terraform', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Ansible', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Jenkins', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Python', studentId: 17, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Machine Learning', studentId: 17, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Data Science', studentId: 17, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Machine Learning', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Data Science', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Cybersecurity', studentId: 18, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Network Security', studentId: 18, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Ethical Hacking', studentId: 18, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Cybersecurity', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Network Security', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Ethical Hacking', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'Big Data', studentId: 19, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Hadoop', studentId: 19, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Spark', studentId: 19, createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Big Data', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Hadoop', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Spark', createdAt: new Date(), updatedAt: new Date() },
 
-    { name: 'React Native', studentId: 20, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Expo', studentId: 20, createdAt: new Date(), updatedAt: new Date() },
-    { name: 'Redux', studentId: 20, createdAt: new Date(), updatedAt: new Date() }
+    { name: 'React Native', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Expo', createdAt: new Date(), updatedAt: new Date() },
+    { name: 'Redux', createdAt: new Date(), updatedAt: new Date() }
   ], {});
   },
 
   async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Skills', null, {});
+     await queryInterface.sequelize.query(`ALTER SEQUENCE "Skills_id_seq" RESTART WITH 1`);
   }
 };

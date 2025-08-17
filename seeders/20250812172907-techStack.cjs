@@ -57,5 +57,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('TechStacks', null, {});
+     await queryInterface.sequelize.query(`ALTER SEQUENCE "TechStacks_id_seq" RESTART WITH 1`);
   }
 };

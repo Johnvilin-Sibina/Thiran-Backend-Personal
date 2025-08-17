@@ -229,5 +229,6 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Projects', null, {});
+     await queryInterface.sequelize.query(`ALTER SEQUENCE "Projects_id_seq" RESTART WITH 1`);
   }
 };

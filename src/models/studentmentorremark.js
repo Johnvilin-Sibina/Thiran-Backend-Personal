@@ -3,24 +3,25 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class StudentMentorRemark extends Model {
     static associate(models) {
-      StudentMentorRemark.belongsTo(models.Student, {foreignKey:'studentId'});
-      StudentMentorRemark.belongsTo(models.Mentor, {foreignKey:'mentorId'});
+      StudentMentorRemark.belongsTo(models.Student);
+      StudentMentorRemark.belongsTo(models.Mentor);
     }
   }
   StudentMentorRemark.init({
     studentId: {
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     primaryKey: true
   },
     mentorId:{
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     primaryKey: true
   },
     remark: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'StudentMentorRemark',
-    tableName: 'StudentMentorRemarks'
+    tableName: 'StudentMentorRemarks',
+    timestamps: true
   });
   return StudentMentorRemark;
 };
