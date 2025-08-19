@@ -1,16 +1,19 @@
-import { Model } from 'sequelize';
+import { Model } from "sequelize";
 
 export default (sequelize, DataTypes) => {
   class Student extends Model {
     static associate(models) {
-      Student.belongsTo(models.College)
-      Student.belongsTo(models.Department)
-      Student.belongsTo(models.Qualification)
-      Student.belongsTo(models.Role)
-      Student.hasMany(models.Project)
-      Student.hasMany(models.StudentMentorRemark)
+      Student.belongsTo(models.College, {foreignKey: 'collegeId'});
+      Student.belongsTo(models.Department, {foreignKey: 'departmentId'});
+      Student.belongsTo(models.Qualification, {foreignKey: 'qualificationId'});
+      Student.belongsTo(models.Role, {foreignKey: 'roleId'});
+      Student.hasMany(models.Project, {foreignKey: 'studentId'});
+      Student.hasMany(models.StudentMentorRemark, {foreignKey: 'studentId'});
       Student.belongsToMany(models.Skill, {
         through: models.StudentSkill,
+        foreignKey: "studentId",
+        otherKey: "skillId",
+        // through: "StudentSkills",
       });
     }
   }
@@ -33,7 +36,7 @@ export default (sequelize, DataTypes) => {
           "Year3",
           "FinalYear",
           "PassedOut"
-        )
+        ),
       },
       currentStatus: {
         type: DataTypes.ENUM("Employed", "NotEmployed", "Intership"),
@@ -42,9 +45,9 @@ export default (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Student",
-      tableName: 'Students',
-    paranoid: true,
-    timestamps: true
+      tableName: "Students",
+      paranoid: true,
+      timestamps: true,
     }
   );
   return Student;

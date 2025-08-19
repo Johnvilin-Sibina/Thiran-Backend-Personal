@@ -3,8 +3,8 @@ import { Model } from "sequelize";
 export default (sequelize, DataTypes) => {
   class StudentSkill extends Model {
     static associate(models) {
-      StudentSkill.belongsTo(models.Student);
-      StudentSkill.belongsTo(models.Skill);
+      StudentSkill.belongsTo(models.Student, {foreignKey:'studentId'});
+      StudentSkill.belongsTo(models.Skill, {foreignKey:'skillId'});
     }
   }
   StudentSkill.init(

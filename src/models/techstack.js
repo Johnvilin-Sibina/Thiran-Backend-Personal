@@ -3,7 +3,7 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class TechStack extends Model {
     static associate(models) {
-      TechStack.hasMany(models.Project)
+      TechStack.hasMany(models.Project, {foreignKey: 'techStackId'})
     }
   }
   TechStack.init({

@@ -3,8 +3,8 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class Mentor extends Model {
     static associate(models) {
-      Mentor.belongsTo(models.Role)
-      Mentor.hasMany(models.StudentMentorRemark)
+      Mentor.belongsTo(models.Role, {foreignKey: 'roleId'})
+      Mentor.hasMany(models.StudentMentorRemark, {foreignKey: 'mentorId'})
     }
   }
   Mentor.init({

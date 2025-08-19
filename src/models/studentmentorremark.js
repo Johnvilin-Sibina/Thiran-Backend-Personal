@@ -3,8 +3,8 @@ import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class StudentMentorRemark extends Model {
     static associate(models) {
-      StudentMentorRemark.belongsTo(models.Student);
-      StudentMentorRemark.belongsTo(models.Mentor);
+      StudentMentorRemark.belongsTo(models.Student, {foreignKey:'studentId'});
+      StudentMentorRemark.belongsTo(models.Mentor, {foreignKey:'mentorId'});
     }
   }
   StudentMentorRemark.init({
