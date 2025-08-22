@@ -1,6 +1,6 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class Department extends Model {
     static associate(models) {
       Department.hasMany(models.Student, {foreignKey: 'departmentId'})
@@ -15,5 +15,4 @@ export default (sequelize, DataTypes) => {
     paranoid: true,
     timestamps: true
   });
-  return Department;
-};
+export default Department;

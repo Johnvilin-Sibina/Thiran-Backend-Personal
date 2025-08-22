@@ -1,6 +1,6 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class Project extends Model {
     static associate(models) {
       Project.belongsTo(models.TechStack, {foreignKey: 'techStackId'})
@@ -26,5 +26,4 @@ export default (sequelize, DataTypes) => {
     modelName: 'Project',
     tableName: 'Projects'
   });
-  return Project;
-};
+export default Project;

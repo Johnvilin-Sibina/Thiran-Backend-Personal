@@ -1,6 +1,6 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class College extends Model {
     static associate(models) {
       College.hasMany(models.Student, {foreignKey: 'collegeId'})   
@@ -16,5 +16,4 @@ export default (sequelize, DataTypes) => {
     paranoid: true,
     timestamps: true
   });
-  return College;
-};
+export default College;

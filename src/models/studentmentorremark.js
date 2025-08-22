@@ -1,6 +1,6 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class StudentMentorRemark extends Model {
     static associate(models) {
       StudentMentorRemark.belongsTo(models.Student, {foreignKey:'studentId'});
@@ -23,5 +23,4 @@ export default (sequelize, DataTypes) => {
     tableName: 'StudentMentorRemarks',
     timestamps: true
   });
-  return StudentMentorRemark;
-};
+export default StudentMentorRemark;

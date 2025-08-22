@@ -1,10 +1,10 @@
-import { Model } from "sequelize";
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class Skill extends Model {
     static associate(models) {
       Skill.belongsToMany(models.Student, {
-        through: models.StudentSkill,
+        through: "StudentSkill",
         foreignKey: "skillId",
         otherKey: "studentId",
       });
@@ -25,5 +25,4 @@ export default (sequelize, DataTypes) => {
       timestamps: true,
     }
   );
-  return Skill;
-};
+export default Skill;

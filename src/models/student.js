@@ -1,6 +1,6 @@
-import { Model } from "sequelize";
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class Student extends Model {
     static associate(models) {
       Student.belongsTo(models.College, {foreignKey: 'collegeId'});
@@ -8,13 +8,16 @@ export default (sequelize, DataTypes) => {
       Student.belongsTo(models.Qualification, {foreignKey: 'qualificationId'});
       Student.belongsTo(models.Role, {foreignKey: 'roleId'});
       Student.hasMany(models.Project, {foreignKey: 'studentId'});
-      Student.hasMany(models.StudentMentorRemark, {foreignKey: 'studentId'});
       Student.belongsToMany(models.Skill, {
-        through: models.StudentSkill,
         foreignKey: "studentId",
         otherKey: "skillId",
-        // through: "StudentSkills",
+        through: "StudentSkill",
       });
+      Student.belongsToMany(models.Mentor,{
+        through: "StudentMentorRemark",
+        foreignKey: "studentId",
+        otherKey: "mentorId"
+      })
     }
   }
   Student.init(
@@ -50,5 +53,4 @@ export default (sequelize, DataTypes) => {
       timestamps: true,
     }
   );
-  return Student;
-};
+export default Student;

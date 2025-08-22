@@ -1,10 +1,14 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from "../config/database.js";
 
-export default (sequelize, DataTypes) => {
   class Mentor extends Model {
     static associate(models) {
       Mentor.belongsTo(models.Role, {foreignKey: 'roleId'})
-      Mentor.hasMany(models.StudentMentorRemark, {foreignKey: 'mentorId'})
+      Mentor.belongsToMany(models.Student,{
+        through: "StudentMentorRemark",
+        foreignKey: "mentorId",
+        otherKey: "studentId",
+      })
     }
   }
   Mentor.init({
@@ -20,5 +24,4 @@ export default (sequelize, DataTypes) => {
     paranoid: true,
     timestamps: true
   });
-  return Mentor;
-};
+export default Mentor;
