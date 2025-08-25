@@ -36,12 +36,6 @@ const modelFiles = fs.readdirSync(__dirname).filter((file) => {
     file.indexOf(".test.js") === -1
   );
 });
-// for (const file of modelFiles) {
-//   const modelPath = pathToFileURL(path.join(__dirname, file)).href;
-//   const { default: modelDefiner } = await import(modelPath);
-//   const model = modelDefiner(sequelize, Sequelize.DataTypes);
-//   db[model.name] = model;
-// }
 
 for (const file of modelFiles) {
   const modelPath = pathToFileURL(path.join(__dirname, file)).href;
