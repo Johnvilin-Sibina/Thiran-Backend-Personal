@@ -3,16 +3,29 @@ import sequelize from "../config/database.js";
 
   class Department extends Model {
     static associate(models) {
-      Department.hasMany(models.Student, {foreignKey: 'departmentId'})
+      Department.belongsToMany(models.Student, 
+        {
+          through: models.StudentEducation,
+          foreignKey: 'departmentId',
+          otherKey: 'studentId'
+        })
     }
-  }
-  Department.init({
-    name: DataTypes.STRING
-  }, {
+}
+
+Department.init(
+  {
+    name: DataTypes.STRING,
+  },
+  {
     sequelize,
     modelName: 'Department',
     tableName: 'Departments',
     paranoid: true,
-    timestamps: true
+    timestamps: true,
+    defaultScope: {
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
+    },
   });
 export default Department;

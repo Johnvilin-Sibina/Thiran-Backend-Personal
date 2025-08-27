@@ -1,3 +1,4 @@
+
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
@@ -355,5 +356,6 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("StudentSkills", null, {});
+    await queryInterface.sequelize.query(`ALTER SEQUENCE "StudentSkills_id_seq" RESTART WITH 1`);
   },
 };
