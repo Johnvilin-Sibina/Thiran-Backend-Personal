@@ -5,7 +5,7 @@ import sequelize from "../config/database.js";
     static associate(models) {
       Mentor.belongsTo(models.Role, {foreignKey: 'roleId'})
       Mentor.belongsToMany(models.Student,{
-        through: "StudentMentorRemark",
+        through: models.StudentMentorRemark,
         foreignKey: "mentorId",
         otherKey: "studentId",
       })
@@ -16,12 +16,20 @@ import sequelize from "../config/database.js";
     lastName: DataTypes.STRING,
     username: DataTypes.STRING,
     email: DataTypes.STRING,
-    roleId: DataTypes.SMALLINT
+    roleId: DataTypes.SMALLINT,
+    description: DataTypes.TEXT,
+    linkedinProfile: DataTypes.STRING,
+    profilePricture: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Mentor',
     tableName: 'Mentors',
     paranoid: true,
-    timestamps: true
+    timestamps: true,
+    defaultScope: {
+      attributes: {
+        exclude: ["roleId", "createdAt", "updatedAt", "deletedAt"],
+      },
+    },
   });
 export default Mentor;

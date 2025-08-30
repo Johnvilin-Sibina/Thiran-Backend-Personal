@@ -60,6 +60,9 @@ Student.init(
     currentStatus: {
       type: DataTypes.ENUM("Employed", "NotEmployed", "Internship"),
     },
+    linkedinProfile: DataTypes.STRING,
+    profilePricture: DataTypes.STRING,
+    isVerified: DataTypes.BOOLEAN
   },
   {
     sequelize,
