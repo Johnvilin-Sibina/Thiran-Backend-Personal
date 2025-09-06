@@ -7,7 +7,10 @@ import sequelize from "../config/database.js";
       StudentMentorRemark.belongsTo(models.Mentor, {foreignKey:'mentorId'});
     }
   }
-  StudentMentorRemark.init({
+
+
+StudentMentorRemark.init(
+  {
     studentId: {
     type: DataTypes.INTEGER,
     primaryKey: true
@@ -21,6 +24,12 @@ import sequelize from "../config/database.js";
     sequelize,
     modelName: 'StudentMentorRemark',
     tableName: 'StudentMentorRemarks',
-    timestamps: true
+    timestamps: true,    
+    paranoid: true,
+    defaultScope: {
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
+    },
   });
 export default StudentMentorRemark;

@@ -1,12 +1,8 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
+
+import { Model, DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
+
   class StudentEducation extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
      StudentEducation.belongsTo(models.Student,{foreignKey:'studentId'})
      StudentEducation.belongsTo(models.College,{foreignKey:'collegeId'})
@@ -37,21 +33,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       startingYear: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-          min: 1980,
-          max: 2100,
-          isInt: true,
-        },
+        type: DataTypes.DATE
+        
       },
       endingYear:{ 
-        type: DataTypes.INTEGER,
-         validate: {
-          min: 1980,
-          max: 2100,
-          isInt: true,
-        },
+        type: DataTypes.DATE
       }
     },
     {
@@ -67,5 +53,5 @@ module.exports = (sequelize, DataTypes) => {
       },
     }
   );
-  return StudentEducation;
-};
+
+export default StudentEducation;

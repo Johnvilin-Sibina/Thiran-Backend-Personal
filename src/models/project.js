@@ -7,23 +7,30 @@ import sequelize from "../config/database.js";
       Project.belongsTo(models.Student, {foreignKey: 'studentId'})
     }
   }
-  Project.init({
+
+
+Project.init(
+  {
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
     techStackId: DataTypes.INTEGER,
     studentId: DataTypes.INTEGER,
     developmentArea: {
-      type:DataTypes.ENUM(
-        'Frontend',
-        'Backend',
-        'Fullstack'
-      )
+      type: DataTypes.ENUM("Frontend", "Backend", "Fullstack"),
     },
     gitHub: DataTypes.STRING,
-    website: DataTypes.STRING
-  }, {
+    website: DataTypes.STRING,
+  },
+  {
     sequelize,
     modelName: 'Project',
-    tableName: 'Projects'
+    tableName: 'Projects',
+    timestamps: true,
+    paranoid: true,
+    defaultScope: {
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
+    },
   });
 export default Project;
