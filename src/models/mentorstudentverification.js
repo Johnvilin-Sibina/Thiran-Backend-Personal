@@ -30,4 +30,4 @@ import sequelize from "../config/database.js";
       }
     }
   });
-  return MentorStudentVerification;
+  export default MentorStudentVerification;

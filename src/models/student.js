@@ -46,7 +46,9 @@ Student.init(
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     username: DataTypes.STRING,
-    email: DataTypes.STRING,
+    searchableName:DataTypes.STRING,
+    email: DataTypes.STRING,    
+    googleId: DataTypes.STRING,
     phoneNumber: DataTypes.STRING(10),
     description: DataTypes.TEXT,
     roleId: DataTypes.INTEGER,
@@ -65,6 +67,8 @@ Student.init(
     defaultScope: {
       attributes: {
         exclude: [
+          "searchableName",
+          "googleId",
           "qualificationId",
           "departmentId",
           "collegeId",

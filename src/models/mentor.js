@@ -22,6 +22,7 @@ Mentor.init(
     lastName: DataTypes.STRING,
     username: DataTypes.STRING,
     email: DataTypes.STRING,
+    googleId: DataTypes.STRING,
     roleId: DataTypes.SMALLINT,
     description: DataTypes.TEXT,
     linkedinProfile: DataTypes.STRING,
@@ -35,7 +36,7 @@ Mentor.init(
     timestamps: true,
     defaultScope: {
       attributes: {
-        exclude: ["roleId", "createdAt", "updatedAt", "deletedAt"],
+        exclude: ["googleId", "roleId", "createdAt", "updatedAt", "deletedAt"],
       },
     },
   }
