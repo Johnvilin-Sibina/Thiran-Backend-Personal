@@ -32,7 +32,7 @@ module.exports = {
     // Update existing records
     await queryInterface.sequelize.query(`
       UPDATE "Students" 
-      SET "searchableName" = LOWER("firstName" || "lastName" || username
+      SET "searchableName" = LOWER("firstName" || "lastName" || username)
       WHERE "searchableName" IS NULL;
     `);
   },
