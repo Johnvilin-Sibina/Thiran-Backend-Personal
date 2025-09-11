@@ -39,6 +39,7 @@ class Student extends Model {
       foreignKey: "studentId",
       otherKey: "mentorId",
     });
+    // Student.hasOne(models.MentorStudentVerification,{foreignKey:"studentId"})
   }
 }
 Student.init(

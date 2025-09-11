@@ -11,7 +11,8 @@ import sequelize from "../config/database.js";
   MentorStudentVerification.init({
     studentId:{
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        unique: true
       },
     mentorId: {
         type: DataTypes.INTEGER,
