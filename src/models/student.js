@@ -67,6 +67,7 @@ Student.init(
     defaultScope: {
       attributes: {
         exclude: [
+          "id",
           "searchableName",
           "googleId",
           "qualificationId",
