@@ -40,6 +40,7 @@ class Student extends Model {
       otherKey: "mentorId",
     });
     // Student.hasOne(models.MentorStudentVerification,{foreignKey:"studentId"})
+    Student.hasMany(models.StudentRefreshToken,{ foreignKey: 'studentId'})
   }
 }
 Student.init(
@@ -68,7 +69,6 @@ Student.init(
     defaultScope: {
       attributes: {
         exclude: [
-          "id",
           "searchableName",
           "googleId",
           "qualificationId",

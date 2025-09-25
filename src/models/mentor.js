@@ -15,6 +15,7 @@ class Mentor extends Model {
       otherKey: "studentId",
     });
     // Mentor.hasMany(models.MentorStudentVerification,{foreignKey:"mentorId"})
+    Mentor.hasMany(models.MentorRefreshToken,{ foreignKey: 'mentorId'})
   }
 }
 Mentor.init(
@@ -37,7 +38,7 @@ Mentor.init(
     timestamps: true,
     defaultScope: {
       attributes: {
-        exclude: ["id","googleId", "roleId", "createdAt", "updatedAt", "deletedAt"],
+        exclude: ["googleId", "roleId", "createdAt", "updatedAt", "deletedAt"],
       },
     },
   }
