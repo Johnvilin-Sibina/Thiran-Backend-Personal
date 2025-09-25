@@ -3,7 +3,7 @@ import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import dotenv from "dotenv";
 import Student from "../models/student.js";
 import Mentor from "../models/mentor.js";
-// import { usernameGenerator } from "../utils/dataGenerator.js";
+import jwt from "jsonwebtoken";
 
 dotenv.config();
 
@@ -28,79 +28,49 @@ passport.use(
         if (role === "student") {
           user = await Student.findOne({ where: { googleId: profile.id } });
           if (!user) {
-            //      const {
-            //     firstName,
-            //     lastName,
-            //     phoneNumber,
-            //     description,
-            //     yearOfGraduation,
-            //     linkedinProfile,
-            //   } = req.body;
-            // const username = usernameGenerator(firstName, lastName);
+            const username = email.split("@")[0];
             user = await Student.create({
-              firstName: profile.name.givenName,
-              lastName: profile.name.familyName,
               email,
-              username: profile.displayName,
+              username,
               googleId: profile.id,
-              //   phoneNumber,
-              //   description,
-              //   yearOfGraduation,
               profilePicture: profile.photos[0]?.value,
-              //   linkedinProfile
             });
+            await user.save()
           }
         } else if (role === "mentor") {
           user = await Mentor.findOne({ where: { googleId: profile.id } });
 
           if (!user) {
-            //     const {
-            //     firstName,
-            //     lastName,
-            //     phoneNumber,
-            //     description,
-            //     linkedinProfile,
-            //   } = req.body;
-            // const username = usernameGenerator(firstName, lastName);
+            const username = email.split("@")[0];
             user = await Mentor.create({
-              firstName: profile.name.givenName,
-              lastName: profile.name.familyName,
               email,
-              username: profile.displayName,
+              username,
               googleId: profile.id,
               profilePicture: profile.photos[0]?.value,
             });
+            await user.save()
           }
         } else {
           return done(new Error("Invalid role"), null);
         }
 
-        return done(null, user);
+        const payload = {
+          id: user.id,
+          role,
+        };
+        const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
+          expiresIn: "1h",
+        });
+        const refreshToken = jwt.sign(payload, process.env.JWT_SECRET, {
+          expiresIn: "7d",
+        });
+        console.log("User from Passport:", user);
+        return done(null, { user, role, accessToken, refreshToken });
       } catch (err) {
         return done(err, null);
       }
     }
   )
 );
-
-// Serialize user → store ID + type in session
-passport.serializeUser((user, done) => {
-  done(null, { id: user.id, type: user.constructor.name });
-});
-
-// Deserialize user → fetch from DB
-passport.deserializeUser(async (obj, done) => {
-  try {
-    if (obj.type === "Student") {
-      const student = await Student.findByPk(obj.id);
-      return done(null, student);
-    } else if (obj.type === "Mentor") {
-      const mentor = await Mentor.findByPk(obj.id);
-      return done(null, mentor);
-    }
-  } catch (err) {
-    return done(err, null);
-  }
-});
 
 export default passport;

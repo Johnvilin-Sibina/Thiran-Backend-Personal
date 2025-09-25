@@ -6,6 +6,7 @@ import swaggerUI from "swagger-ui-express";
 import { swaggerSpecs } from "./utils/swagger.js";
 import passport from "./config/passport.js"; 
 import session from "express-session";
+import cookieParser from "cookie-parser";
 
 // route imports
 import studentRoutes from "./routes/studentRoutes.js";
@@ -25,6 +26,9 @@ app.use(
     credentials: true,
   })
 );
+
+//Middleware to parse cookies
+app.use(cookieParser())
 
 app.use(
   session({
@@ -61,3 +65,4 @@ app.use("/api/skills", skillRoutes);
 app.use("/api/auth", authRoutes);
 
 export default app;
+
