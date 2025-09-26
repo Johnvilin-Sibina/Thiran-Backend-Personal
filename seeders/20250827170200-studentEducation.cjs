@@ -1,4 +1,3 @@
-
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
@@ -10,8 +9,6 @@ module.exports = {
       qualificationId: 1, 
       departmentId: 1, 
       collegeId: 1, 
-      startingYear:2017,
-      endingYear:2021,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -19,9 +16,7 @@ module.exports = {
       studentId:2,
       qualificationId: 1, 
       departmentId: 8, 
-      collegeId: 2, 
-      startingYear:2017,
-      endingYear:2021,
+      collegeId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -29,9 +24,7 @@ module.exports = {
       studentId:2,
       qualificationId: 2, 
       departmentId: 8, 
-      collegeId: 1, 
-      startingYear:2021,
-      endingYear:2023,
+      collegeId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -39,9 +32,7 @@ module.exports = {
       studentId:3,
       qualificationId: 5, 
       departmentId: 10, 
-      collegeId: 3, 
-      startingYear:2021,
-      endingYear:2023,
+      collegeId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -49,9 +40,7 @@ module.exports = {
       studentId:3,
       qualificationId: 4, 
       departmentId: 10, 
-      collegeId: 3, 
-      startingYear:2018,
-      endingYear:2021,
+      collegeId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -60,8 +49,6 @@ module.exports = {
       qualificationId: 4, 
       departmentId: 7, 
       collegeId: 4, 
-      startingYear:2016,
-      endingYear:2019,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -70,8 +57,6 @@ module.exports = {
       qualificationId: 1,
       departmentId: 2,
       collegeId: 5, 
-      startingYear:2020,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -80,8 +65,6 @@ module.exports = {
       qualificationId: 2, 
       departmentId: 9, 
       collegeId: 6, 
-      startingYear:2022,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -90,8 +73,6 @@ module.exports = {
       qualificationId: 1, 
       departmentId: 9, 
       collegeId: 6, 
-      startingYear:2018,
-      endingYear:2022,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -99,9 +80,7 @@ module.exports = {
       studentId:7,
       qualificationId: 1, 
       departmentId: 1, 
-      collegeId: 7, 
-      startingYear:2018,
-      endingYear:2022,
+      collegeId: 7,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -110,8 +89,6 @@ module.exports = {
       qualificationId: 5, 
       departmentId: 10, 
       collegeId: 8,
-      startingYear:2021,
-      endingYear:2023,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -120,8 +97,6 @@ module.exports = {
       qualificationId: 4, 
       departmentId: 10, 
       collegeId: 8,
-      startingYear:2018,
-      endingYear:2021,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -129,9 +104,7 @@ module.exports = {
       studentId:9,
       qualificationId: 3, 
       departmentId: 8, 
-      collegeId: 9, 
-      startingYear:2021,
-      endingYear:2024,
+      collegeId: 9,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -139,9 +112,7 @@ module.exports = {
       studentId:10,
       qualificationId: 4, 
       departmentId: 7, 
-      collegeId: 10, 
-      startingYear:2022,
-      endingYear:2025,
+      collegeId: 10,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -150,8 +121,6 @@ module.exports = {
       qualificationId: 1, 
       departmentId: 2, 
       collegeId: 1,
-      startingYear:2021,
-      endingYear:2025,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -159,9 +128,7 @@ module.exports = {
       studentId:12,
       qualificationId: 2, 
       departmentId: 9, 
-      collegeId: 2, 
-      startingYear:2021,
-      endingYear:2023,
+      collegeId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -169,9 +136,7 @@ module.exports = {
       studentId:12,
       qualificationId: 1, 
       departmentId: 9, 
-      collegeId: 2, 
-      startingYear:2017,
-      endingYear:2021,
+      collegeId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -180,8 +145,6 @@ module.exports = {
       qualificationId: 4, 
       departmentId: 7, 
       collegeId: 3, 
-      startingYear:2021,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -190,8 +153,6 @@ module.exports = {
       qualificationId: 1, 
       departmentId: 1, 
       collegeId: 4,
-      startingYear:2021,
-      endingYear:2025,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -200,8 +161,6 @@ module.exports = {
       qualificationId: 3, 
       departmentId: 5, 
       collegeId: 5, 
-      startingYear:2022,
-      endingYear:2025,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -210,8 +169,6 @@ module.exports = {
       qualificationId: 4, 
       departmentId: 7, 
       collegeId: 6,
-      startingYear:2022,
-      endingYear:2025,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -220,8 +177,6 @@ module.exports = {
       qualificationId: 3, 
       departmentId: 8, 
       collegeId: 7,
-      startingYear:2021,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -230,8 +185,6 @@ module.exports = {
       qualificationId: 5, 
       departmentId: 9, 
       collegeId: 8,
-      startingYear:2022,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -240,8 +193,6 @@ module.exports = {
       qualificationId: 4, 
       departmentId: 9, 
       collegeId: 8,
-      startingYear:2019,
-      endingYear:2022,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -250,8 +201,6 @@ module.exports = {
       qualificationId: 2,  
       departmentId: 9,     
       collegeId: 6,
-      startingYear:2022,
-      endingYear:2024,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -260,8 +209,6 @@ module.exports = {
       qualificationId: 1,  
       departmentId: 9,     
       collegeId: 6,
-      startingYear:2018,
-      endingYear:2022,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -270,8 +217,6 @@ module.exports = {
       qualificationId: 4,  
       departmentId: 1,     
       collegeId: 3,
-      startingYear:2020,
-      endingYear:2023,
       createdAt: new Date(),
       updatedAt: new Date()
     }

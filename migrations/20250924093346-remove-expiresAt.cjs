@@ -9,12 +9,10 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
    await queryInterface.addColumn('StudentRefreshTokens',"expiresAt",{
-    type: Sequelize.DATE,
-    allowNull: false
+    type: Sequelize.DATE
    })
    await queryInterface.addColumn('MentorRefreshTokens',"expiresAt",{
-    type: Sequelize.DATE,
-    allowNull: false
+    type: Sequelize.DATE
    })
   }
 };

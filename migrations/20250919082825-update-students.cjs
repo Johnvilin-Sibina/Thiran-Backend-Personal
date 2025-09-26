@@ -66,11 +66,11 @@ module.exports = {
     // Change the columns firstName and lastName back to not null
     await queryInterface.changeColumn("Students", "firstName", {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.changeColumn("Students", "lastName", {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
 
     //Remove the newly added column
